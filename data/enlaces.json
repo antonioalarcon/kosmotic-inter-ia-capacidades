@@ -1,0 +1,8 @@
+{
+  "version": "v0.1",
+  "estado": "semilla",
+  "enlaces": [
+    {"tipo": "web-publica", "nombre": "Landing actual", "url": "https://kosmotic-inter-ia-capacidades.nomadadigital.chatgpt.site", "uso": "referencia visual inicial"},
+    {"tipo": "repositorio", "nombre": "GitHub canónico", "url": "https://github.com/antonioalarcon/kosmotic-inter-ia-capacidades", "uso": "fuente versionada"}
+  ]
+}
