@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://kosmotic.org/schemas/enlace.schema.json",
+  "title":"Colección de enlaces KosmoTIC",
+  "type":"object",
+  "required":["version","estado","enlaces"],
+  "properties":{
+    "version":{"type":"string"},"estado":{"type":"string"},
+    "enlaces":{"type":"array","items":{"type":"object","required":["tipo","nombre","url","uso"],"properties":{"tipo":{"type":"string"},"nombre":{"type":"string"},"url":{"type":"string","format":"uri"},"uso":{"type":"string"}},"additionalProperties":false}}
+  },"additionalProperties":false
+}
