@@ -3,7 +3,7 @@ async function loadCapabilities() {
   if (!target) return;
 
   try {
-    const response = await fetch('../data/capacidades.json');
+    const response = await fetch('data/capacidades.json');
     const data = await response.json();
 
     target.innerHTML = data.capacidades.map((item) => `
