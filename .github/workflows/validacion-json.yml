@@ -6,12 +6,14 @@ on:
       - "data/**"
       - "schemas/**"
       - ".github/workflows/validacion-json.yml"
+      - ".github/workflows/pages.yml"
       - "web/**"
   pull_request:
     paths:
       - "data/**"
       - "schemas/**"
       - ".github/workflows/validacion-json.yml"
+      - ".github/workflows/pages.yml"
       - "web/**"
 
 permissions:
