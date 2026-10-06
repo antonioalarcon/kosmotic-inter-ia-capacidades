@@ -1,0 +1,51 @@
+name: Publicar GitHub Pages
+
+on:
+  workflow_run:
+    workflows: ["Validación JSON"]
+    types: [completed]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del commit validado
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Construir proyección pública
+        run: |
+          mkdir -p _site
+          cp -R web/. _site/
+          mkdir -p _site/data
+          cp data/capacidades.json _site/data/capacidades.json
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empaquetar artefacto Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    needs: construir
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
