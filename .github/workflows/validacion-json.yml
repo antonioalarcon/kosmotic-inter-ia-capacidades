@@ -12,6 +12,7 @@ on:
       - "data/**"
       - "schemas/**"
       - ".github/workflows/validacion-json.yml"
+      - "web/**"
 
 permissions:
   contents: read
@@ -30,7 +31,7 @@ jobs:
         run: npm install -g ajv-cli ajv-formats
       - name: Comprobar sintaxis JSON
         run: |
-          node -e "for (const f of ['data/capacidades.json','data/herramientas.json','data/enlaces.json','data/fuentes.json']) JSON.parse(require('fs').readFileSync(f,'utf8'))"
+          node -e "for (const f of ['data/capacidades.json','data/herramientas.json','data/enlaces.json','data/fuentes.json','data/sistema-grafico.json']) JSON.parse(require('fs').readFileSync(f,'utf8'))"
       - name: Validar capacidades
         run: ajv validate --spec=draft2020 -c ajv-formats -s schemas/capacidad.schema.json -d data/capacidades.json
       - name: Validar herramientas
@@ -39,3 +40,5 @@ jobs:
         run: ajv validate --spec=draft2020 -c ajv-formats -s schemas/enlace.schema.json -d data/enlaces.json
       - name: Validar fuentes
         run: ajv validate --spec=draft2020 -c ajv-formats -s schemas/fuente.schema.json -d data/fuentes.json
+      - name: Validar sistema gráfico
+        run: ajv validate --spec=draft2020 -c ajv-formats -s schemas/sistema-grafico.schema.json -d data/sistema-grafico.json
