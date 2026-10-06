@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kosmotic.org/schemas/sistema-grafico.schema.json",
+  "title": "Catálogo base del sistema gráfico KosmoTIC",
+  "type": "object",
+  "required": ["referencia", "version", "estado", "fecha", "criterio", "regla_coherencia", "familias", "iconos"],
+  "properties": {
+    "referencia": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "estado": {"type": "string", "minLength": 1},
+    "fecha": {"type": "string", "format": "date"},
+    "criterio": {"type": "string", "minLength": 1},
+    "regla_coherencia": {
+      "type": "object",
+      "required": ["semantico_fijo", "semantico_contextual", "decorativo"],
+      "properties": {
+        "semantico_fijo": {"type": "string", "minLength": 1},
+        "semantico_contextual": {"type": "string", "minLength": 1},
+        "decorativo": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "familias": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["slug", "titulo"],
+        "properties": {
+          "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "titulo": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "iconos": {
+      "type": "array",
+      "minItems": 90,
+      "maxItems": 90,
+      "items": {
+        "type": "object",
+        "required": ["id", "icono", "slug", "nombre", "familia", "estado_semantico", "significado_funcional"],
+        "properties": {
+          "id": {"type": "integer", "minimum": 1},
+          "icono": {"type": "string", "minLength": 1},
+          "slug": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "nombre": {"type": "string", "minLength": 1},
+          "familia": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "estado_semantico": {"type": "string", "enum": ["fijo", "contextual", "decorativo"]},
+          "significado_funcional": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
