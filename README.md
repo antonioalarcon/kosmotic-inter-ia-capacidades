@@ -1,7 +1,7 @@
 # KosmoTIC · Inter-IA · Capacidades
 
 **Referencia:** KOS-COM-IA-CAPACIDADES-2026-10-06  
-**Versión:** v0.1 · Canónica  
+**Versión:** v0.2 · Estructural  
 **Fecha:** 06/10/2026  
 **Estado:** BASE PÚBLICA · EN EVOLUCIÓN
 
@@ -72,7 +72,7 @@ Si no lo hace, no se integra.
 
 ## Estado actual
 
-Esta versión v0.1 contiene:
+Esta versión v0.2 contiene:
 
 - Landing pública inicial.
 - Documento canónico de capacidades.
@@ -80,6 +80,12 @@ Esta versión v0.1 contiene:
 - Arquitectura inicial de carpetas.
 - Decisiones arquitectónicas registradas.
 - Base de integración para conectores y agentes futuros.
+- Esquemas JSON para validar las colecciones de datos.
+- CI de GitHub Actions para validación automática.
+- Metadatos de visión, roadmap, principios y glosario.
+- Plantillas de issues y pull requests para gobernanza distribuida.
+- Capas explícitas de protocolos y gobernanza.
+- ADR de arquitectura capability-centric y evidencia como entidad de primer nivel.
 
 ---
 
