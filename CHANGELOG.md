@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## v0.2 · Estructural · 2026-10-06
+
+Estado: **ESTRUCTURA DE GOBERNANZA Y VALIDACIÓN**
+
+### Añadido
+
+- `.github/` con plantillas de issues, pull requests y workflow de validación JSON.
+- `schemas/` con contratos para capacidades, herramientas, enlaces y fuentes.
+- `meta/` con visión, roadmap, principios y glosario.
+- `knowledge/protocolos/` y `knowledge/gobernanza/`.
+- ADR-0003: arquitectura capability-centric.
+- ADR-0004: evidencia como entidad de primer nivel.
+
+### Decisiones
+
+- No clasificar físicamente capacidades como humanas/IA/híbridas en esta fase.
+- No organizar herramientas físicamente por proveedor.
+- No crear `registry/` hasta definir una frontera clara con `data/`.
+- Mantener los datos actuales en colecciones JSON con schemas compatibles con su envolvente real.
+- Verificar CI antes de activar GitHub Pages.
+
+---
+
+
 ## v0.1 · Canónica · 2026-10-06
 
 Estado: **BASE PÚBLICA · EN EVOLUCIÓN**
