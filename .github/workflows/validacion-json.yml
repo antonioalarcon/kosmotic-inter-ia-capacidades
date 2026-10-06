@@ -6,6 +6,7 @@ on:
       - "data/**"
       - "schemas/**"
       - ".github/workflows/validacion-json.yml"
+      - "web/**"
   pull_request:
     paths:
       - "data/**"
