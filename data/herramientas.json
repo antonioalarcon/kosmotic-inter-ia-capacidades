@@ -1,0 +1,12 @@
+{
+  "version": "v0.1",
+  "estado": "semilla",
+  "criterio": "Las herramientas se registran por función, no por moda ni por marca.",
+  "herramientas": [
+    {"nombre": "ChatGPT", "funcion": "núcleo conversacional, razonamiento, generación, conexión con herramientas autorizadas", "estado": "activo"},
+    {"nombre": "GitHub", "funcion": "repositorio canónico, versionado, trazabilidad y despliegue técnico", "estado": "activo"},
+    {"nombre": "Google Drive", "funcion": "copia N+1, documentación editable y colaboración", "estado": "pendiente"},
+    {"nombre": "Gemini", "funcion": "segunda opinión, contraste y redundancia cognitiva", "estado": "pendiente"},
+    {"nombre": "Perplexity", "funcion": "validación externa y búsqueda con fuentes", "estado": "pendiente"}
+  ]
+}
