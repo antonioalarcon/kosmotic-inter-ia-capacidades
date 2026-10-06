@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://kosmotic.org/schemas/herramienta.schema.json",
+  "title":"Colección de herramientas KosmoTIC",
+  "type":"object",
+  "required":["version","estado","criterio","herramientas"],
+  "properties":{
+    "version":{"type":"string"},"estado":{"type":"string"},"criterio":{"type":"string"},
+    "herramientas":{"type":"array","items":{"type":"object","required":["nombre","funcion","estado"],"properties":{"nombre":{"type":"string"},"funcion":{"type":"string"},"estado":{"type":"string"}},"additionalProperties":false}}
+  },"additionalProperties":false
+}
