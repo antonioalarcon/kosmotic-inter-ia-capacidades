@@ -1,0 +1,40 @@
+name: Validación JSON
+
+on:
+  push:
+    paths:
+      - "data/**"
+      - "schemas/**"
+      - ".github/workflows/validacion-json.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "schemas/**"
+      - ".github/workflows/validacion-json.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar AJV
+        run: npm install -g ajv-cli ajv-formats
+      - name: Comprobar sintaxis JSON
+        run: |
+          node -e "for (const f of ['data/capacidades.json','data/herramientas.json','data/enlaces.json','data/fuentes.json']) JSON.parse(require('fs').readFileSync(f,'utf8'))"
+      - name: Validar capacidades
+        run: ajv validate --spec=draft2020 -c ajv-formats -s schemas/capacidad.schema.json -d data/capacidades.json
+      - name: Validar herramientas
+        run: ajv validate --spec=draft2020 -c ajv-formats -s schemas/herramienta.schema.json -d data/herramientas.json
+      - name: Validar enlaces
+        run: ajv validate --spec=draft2020 -c ajv-formats -s schemas/enlace.schema.json -d data/enlaces.json
+      - name: Validar fuentes
+        run: ajv validate --spec=draft2020 -c ajv-formats -s schemas/fuente.schema.json -d data/fuentes.json
