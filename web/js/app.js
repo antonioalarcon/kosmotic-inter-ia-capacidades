@@ -14,7 +14,7 @@ async function loadCapabilities() {
       </article>
     `).join('');
   } catch (error) {
-    target.innerHTML = `<p>Error real: ${error.message}</p>`;
+    target.innerHTML = '<p>No se pudieron cargar las capacidades estructuradas.</p>';
     console.error(error);
   }
 }
