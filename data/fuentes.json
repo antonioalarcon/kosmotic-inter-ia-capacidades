@@ -1,0 +1,8 @@
+{
+  "version": "v0.1",
+  "estado": "semilla",
+  "fuentes": [
+    {"id": "KOS-COM-IA-CAPACIDADES-2026-10-06", "tipo": "documento-canonico", "descripcion": "Base pública canónica de capacidades KosmoTIC · Inter-IA", "estado": "activo"}
+  ],
+  "regla": "Toda afirmación crítica debe poder vincularse a una fuente, evidencia, decisión o experimento."
+}
