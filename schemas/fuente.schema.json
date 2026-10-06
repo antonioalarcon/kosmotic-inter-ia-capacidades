@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://kosmotic.org/schemas/fuente.schema.json",
+  "title":"Colección de fuentes KosmoTIC",
+  "type":"object",
+  "required":["version","estado","fuentes","regla"],
+  "properties":{
+    "version":{"type":"string"},"estado":{"type":"string"},"regla":{"type":"string"},
+    "fuentes":{"type":"array","items":{"type":"object","required":["id","tipo","descripcion","estado"],"properties":{"id":{"type":"string","minLength":1},"tipo":{"type":"string","minLength":1},"descripcion":{"type":"string","minLength":1},"estado":{"type":"string","minLength":1},"titulo":{"type":"string"},"autor":{"type":"string"},"url":{"type":"string","format":"uri"},"fecha_consulta":{"type":"string","format":"date"},"nivel_confianza":{"type":"integer","minimum":1,"maximum":5}},"additionalProperties":false}}
+  },"additionalProperties":false
+}
