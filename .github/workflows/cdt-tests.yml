@@ -3,7 +3,7 @@ on:
   pull_request:
     paths:
       - 'cdt/**'
-      - 'tests/test_cdt.py'
+      - 'tests/test_cdt*.py'
       - '.github/workflows/cdt-tests.yml'
   workflow_dispatch:
 permissions:
@@ -17,4 +17,4 @@ jobs:
         with:
           python-version: '3.11'
       - name: Run CDT synthetic tests
-        run: python -m unittest discover -s tests -p 'test_cdt.py' -v
+        run: python -m unittest discover -s tests -p 'test_cdt*.py' -v
