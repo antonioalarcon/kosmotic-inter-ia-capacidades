@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Inter-IA simulated authorization decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "outcome",
+    "reason"
+  ],
+  "properties": {
+    "outcome": {
+      "enum": [
+        "DENY",
+        "BLOCK",
+        "HOLD",
+        "ALLOW_SIMULATED"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
