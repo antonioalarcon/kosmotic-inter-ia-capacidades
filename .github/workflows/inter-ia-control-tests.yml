@@ -1,0 +1,23 @@
+name: Inter-IA control simulator tests
+on:
+  push:
+    paths:
+      - 'experiments/exp-002-autorizacion/**'
+      - '.github/workflows/inter-ia-control-tests.yml'
+  pull_request:
+    paths:
+      - 'experiments/exp-002-autorizacion/**'
+      - '.github/workflows/inter-ia-control-tests.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Testar autorización simulada
+        working-directory: experiments/exp-002-autorizacion
+        run: npm test
