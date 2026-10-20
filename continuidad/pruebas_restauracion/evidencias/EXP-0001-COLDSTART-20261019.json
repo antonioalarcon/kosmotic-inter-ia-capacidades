@@ -1,0 +1,34 @@
+{
+  "test_id": "EXP-0001-COLDSTART-20261019",
+  "timestamp_utc": "2026-10-19T11:32:46.201449+00:00",
+  "result": "PASS",
+  "scope": "recuperacion_documental_en_directorio_nuevo",
+  "fetch_method": "GitHub Contents API",
+  "repository": "antonioalarcon/kosmotic-inter-ia-capacidades",
+  "source_ref": "exp/exp-0001-manifest-20261016",
+  "manifest_path": "experiments/federacion-documental/EXP-0001/manifest.json",
+  "artifact_path": "experiments/federacion-documental/EXP-0001/replica/EXP-0001.md",
+  "size_bytes": 920,
+  "sha256_expected": "04ec94bd1df74a3d5309668011f1b0c014dc97c6adf068d03b4690e12d7014d4",
+  "sha256_restored": "04ec94bd1df74a3d5309668011f1b0c014dc97c6adf068d03b4690e12d7014d4",
+  "binary_identical": true,
+  "no_overwrite": true,
+  "human_approval": "PENDIENTE",
+  "federated_homologation": "PENDIENTE",
+  "limitations": [
+    "No acredita recuperación integral ante caída de proveedor",
+    "No acredita disponibilidad sin red",
+    "La réplica existe en rama no fusionada; no hay sincronización automática",
+    "La aprobación humana y la prueba federada siguen pendientes"
+  ],
+  "provenance": {
+    "workflow_run_id": 39245389246,
+    "workflow_run_url": "https://github.com/antonioalarcon/kosmotic-inter-ia-capacidades/actions/runs/39245389246",
+    "workflow_head_sha": "3ab7ba50887242dd05bdaa0be2d0ce7724eedf15",
+    "artifact_id": 12183292123,
+    "artifact_name": "exp0001-coldstart-certificate",
+    "artifact_digest": "sha256:e619b853ca8203aa65be2490d9457323d16f04f8ffb39abb80ad1a533b07febb",
+    "source": "Certificado generado por GitHub Actions; metadatos de procedencia añadidos tras inspección",
+    "human_signed": false
+  }
+}

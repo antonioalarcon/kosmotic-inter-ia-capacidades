@@ -1,0 +1,54 @@
+{
+  "version_ficha": "V1.0",
+  "fecha_registro": "2026-10-19",
+  "autoridad_soberana": "Antonio Alarcón Izquierdo ✔️",
+  "estado_participacion": "ADMITIDO",
+  "homologacion_tecnica": "PENDIENTE",
+  "mcp_verificado": false,
+  "a2a_verificado": false,
+  "agent_card_publicada": false,
+  "a2a_endpoint": null,
+  "conexiones_adicionales": "No inferir; verificar por interfaz y fecha",
+  "autoridad_sobre_otros_nodos": "Coordinación funcional autorizada; ninguna potestad soberana",
+  "politica_autorizacion": "HITL obligatorio para cambios sensibles; mínimo privilegio; revocación por Antonio",
+  "aprobador_soberano": "Antonio Alarcón Izquierdo ✔️",
+  "reevaluacion": "A decisión de Antonio o por propuesta motivada del Espejo",
+  "fuente": "Registro Federado de Nodos IA · 19/10/2026; fichas operativas sujetas a comprobación",
+  "tipo": "Ficha interna de censo; NO es Agent Card A2A",
+  "id_nodo": "NODO-CHATGPT",
+  "alias_operativo": "Nodo A · ChatGPT · Coordinador y Espejo",
+  "producto_interfaz": "ChatGPT · aplicación con conectores",
+  "proveedor": "OpenAI",
+  "rol": "Coordinación principal, verificación y seguimiento bajo autoridad humana",
+  "capacidades_declaradas": [
+    "Síntesis y coordinación",
+    "Inspección de GitHub y Drive mediante conectores disponibles",
+    "Verificación y trazabilidad de pruebas"
+  ],
+  "capacidades_verificadas": [
+    "Lectura de Drive/GitHub y actualización del cuadro de mando realizadas el 19/10/2026",
+    "Comparación de réplica y original EXP-0001; hash contrastado"
+  ],
+  "conexiones": [
+    {
+      "servicio": "Google Drive/Sheets",
+      "estado": "VERIFICADO EN ESTA SESION",
+      "fecha": "2026-10-19",
+      "detalle": "Lectura y actualización del cuadro de mando"
+    },
+    {
+      "servicio": "GitHub",
+      "estado": "VERIFICADO EN ESTA SESION",
+      "fecha": "2026-10-19",
+      "detalle": "Lectura de PR y escritura en rama de trabajo autorizada"
+    }
+  ],
+  "pruebas": [
+    {
+      "id": "EXP-0001-RESTORE-LOCAL-20261019",
+      "resultado": "Restauración local reportada PASS; no equivale a cold start remoto"
+    }
+  ],
+  "ultima_comprobacion": "2026-10-19",
+  "revocacion": "Antonio retira la función coordinadora o desconecta permisos y accesos"
+}

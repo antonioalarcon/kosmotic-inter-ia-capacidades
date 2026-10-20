@@ -1,0 +1,34 @@
+name: V4-002 Gemini API real roundtrip (manual, requires secret)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gemini-roundtrip:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Require explicitly provisioned Gemini API secret
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "BLOCKED: GEMINI_API_KEY not configured"
+            exit 2
+          fi
+      - name: Send synthetic EXP-0001 to Gemini model API and validate response
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          V4_002_OUTPUT: ${{ runner.temp }}/v4-002-evidencia
+        run: python interoperabilidad/a2a/laboratorio_v4_002/gemini_roundtrip.py
+      - name: Preserve certificate without exposing secret
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v4-002-gemini-api-evidence
+          path: ${{ runner.temp }}/v4-002-evidencia/certificado.json
+          retention-days: 30

@@ -1,0 +1,40 @@
+name: Inter-IA V4-001 synthetic two-process proof
+on:
+  pull_request:
+    paths:
+      - 'interoperabilidad/a2a/laboratorio_v4_001/**'
+      - 'experiments/federacion-documental/EXP-0001/**'
+      - '.github/workflows/v4-001.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  v4-001:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Execute three scenarios with a separate worker process
+        run: python interoperabilidad/a2a/laboratorio_v4_001/v4_001.py --output "$RUNNER_TEMP/v4-001"
+      - name: Verify certificate and three individual outcomes
+        run: |
+          python - <<'PY'
+          import json, os, pathlib
+          p=pathlib.Path(os.environ["RUNNER_TEMP"])/"v4-001"/"certificado.json"
+          d=json.loads(p.read_text(encoding="utf-8"))
+          if d["result"]!="PASS" or [t["result"] for t in d["tests"]]!=["PASS"]*3:
+              raise SystemExit("V4-001 FAIL")
+          if d["production_interoperability"]!="NO_DEMOSTRADA" or d["human_approval"]!="PENDIENTE":
+              raise SystemExit("Alcance o gobernanza incorrectos")
+          print("V4-001_SYNTHETIC_PASS",d["artifact_sha256"])
+          PY
+      - name: Preserve trace and certificate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v4-001-evidence
+          path: ${{ runner.temp }}/v4-001/
+          retention-days: 30

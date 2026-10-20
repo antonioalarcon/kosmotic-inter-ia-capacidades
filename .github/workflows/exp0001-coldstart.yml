@@ -1,0 +1,40 @@
+name: EXP-0001 cold-start verification
+on:
+  pull_request:
+    paths:
+      - 'continuidad/pruebas_restauracion/**'
+      - 'experiments/federacion-documental/EXP-0001/**'
+      - '.github/workflows/exp0001-coldstart.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  coldstart:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline unit tests (not remote proof)
+        run: python -m unittest discover -s continuidad/pruebas_restauracion -p 'test_*.py' -v
+      - name: Cold start via live GitHub API in a new runner
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python continuidad/pruebas_restauracion/restore_exp0001_coldstart.py "$RUNNER_TEMP/exp0001-remote-${{ github.run_id }}"
+          python - <<'PY'
+          import json, os, pathlib
+          p = pathlib.Path(os.environ["RUNNER_TEMP"]) / ("exp0001-remote-" + os.environ["GITHUB_RUN_ID"]) / "certificado.json"
+          c = json.loads(p.read_text(encoding="utf-8"))
+          assert c["result"] == "PASS" and c["fetch_method"] == "GitHub Contents API"
+          print("REMOTE_COLDSTART_PASS", c["sha256_restored"])
+          PY
+      - name: Preserve machine-readable certificate
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exp0001-coldstart-certificate
+          path: ${{ runner.temp }}/exp0001-remote-${{ github.run_id }}/certificado.json
+          retention-days: 30

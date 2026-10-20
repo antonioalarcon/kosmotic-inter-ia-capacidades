@@ -1,0 +1,47 @@
+{
+  "version_ficha": "V1.0",
+  "fecha_registro": "2026-10-19",
+  "autoridad_soberana": "Antonio Alarcón Izquierdo ✔️",
+  "estado_participacion": "ADMITIDO",
+  "homologacion_tecnica": "PENDIENTE",
+  "mcp_verificado": false,
+  "a2a_verificado": false,
+  "agent_card_publicada": false,
+  "a2a_endpoint": null,
+  "conexiones_adicionales": "No inferir; verificar por interfaz y fecha",
+  "autoridad_sobre_otros_nodos": "Ninguna autoridad soberana; coordinación funcional solo si ha sido autorizada",
+  "politica_autorizacion": "HITL obligatorio para cambios sensibles; mínimo privilegio; revocación por Antonio",
+  "aprobador_soberano": "Antonio Alarcón Izquierdo ✔️",
+  "reevaluacion": "A decisión de Antonio o por propuesta motivada del Espejo",
+  "fuente": "Registro Federado de Nodos IA · 19/10/2026; fichas operativas sujetas a comprobación",
+  "tipo": "Ficha interna de censo; NO es Agent Card A2A",
+  "id_nodo": "NODO-GEMINI",
+  "alias_operativo": "Nodo B · Gemini",
+  "producto_interfaz": "Gemini · interfaz concreta pendiente de individualizar",
+  "proveedor": "Google",
+  "rol": "Síntesis Analítica, Investigación y Auditoría Transversal",
+  "capacidades_declaradas": [
+    "Análisis y síntesis",
+    "Auditoría cruzada de evidencias",
+    "Trabajo con Google Workspace sujeto a conexión autorizada"
+  ],
+  "capacidades_verificadas": [
+    "Informe independiente EXP-0001 comunicado por Nodo B el 19/10/2026; no equivale a certificación A2A/MCP"
+  ],
+  "conexiones": [
+    {
+      "servicio": "Google Drive/Sheets",
+      "estado": "DECLARADO POR NODO",
+      "fecha": "2026-10-19",
+      "detalle": "Acceso al cuadro de mando comunicado; permisos y mecanismo exactos pendientes de contraste"
+    }
+  ],
+  "pruebas": [
+    {
+      "id": "KOS-IIA-EXP0001-EVAL-RESTAURACION-20261019-V1.0",
+      "resultado": "Dictamen independiente comunicado por Gemini; sin homologación soberana"
+    }
+  ],
+  "ultima_comprobacion": "2026-10-19 · comunicación del nodo",
+  "revocacion": "Antonio retira admisión y revoca permisos o accesos concretos"
+}
