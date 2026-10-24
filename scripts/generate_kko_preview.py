@@ -21,7 +21,7 @@ SECTIONS = (
 )
 
 
-def load_kko(path):
+def load_kko(path, allow_draft=False):
     raw = path.read_text(encoding="utf-8-sig")
     match = re.match(r"\A---\s*\n(.*?)\n---\s*\n", raw, re.S)
     if not match:
@@ -29,8 +29,9 @@ def load_kko(path):
     meta = yaml.safe_load(match.group(1))
     if not isinstance(meta, dict) or not all(meta.get(k) for k in ("id", "version", "title")):
         raise ValueError("Faltan id, version o title en el KKO")
-    if meta.get("status") != "validated":
-        raise ValueError("Solo se generan vistas de KKO validados")
+    status = meta.get("status")
+    if status != "validated" and not (allow_draft and status == "draft"):
+        raise ValueError("Solo se generan vistas de KKO validados; para pruebas de borradores use --allow-draft")
     body = raw[match.end():]
     headers = list(re.finditer(r"(?m)^## (.+?)\s*$", body))
     sections = {}
@@ -47,6 +48,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--kko", default=DEFAULT_KKO, help="Ruta del KKO dentro de knowledge/")
     parser.add_argument("--output", default=DEFAULT_OUTPUT, help="Salida temporal dentro de dist/preview/")
+    parser.add_argument("--allow-draft", action="store_true", help="Permitir KKO en draft solo para una vista temporal de revisión")
     args = parser.parse_args()
     source = (ROOT / args.kko).resolve()
     target = (ROOT / args.output).resolve()
@@ -54,7 +56,7 @@ def main():
         parser.error("El KKO debe estar en knowledge/")
     if not target.is_relative_to((ROOT / "dist/preview").resolve()):
         parser.error("La salida debe permanecer en dist/preview/; nunca en docs/ o web/")
-    meta, sections = load_kko(source)
+    meta, sections = load_kko(source, allow_draft=args.allow_draft)
     rel_source = source.relative_to(ROOT).as_posix()
     parts = [
         "---",

@@ -28,20 +28,32 @@ jobs:
           python-version: "3.12"
       - name: Instalar lector YAML
         run: python -m pip install "PyYAML>=6,<7"
-      - name: Generar vista KosmoWiki desde el KKO piloto
+      - name: Generar vista KosmoWiki desde el KKO piloto validado
         run: python scripts/generate_kko_preview.py
-      - name: Comprobar que solo se ha generado un borrador
+      - name: Comprobar el primer borrador
         run: |
           test -s dist/preview/kosmowiki/agentes-ia.md
           grep -q '^status: draft$' dist/preview/kosmowiki/agentes-ia.md
           grep -q '^publication_approved: false$' dist/preview/kosmowiki/agentes-ia.md
           grep -q '^source_kko: "KKO-IA-AGENTES-001"$' dist/preview/kosmowiki/agentes-ia.md
-      - name: Guardar borrador para revisión (7 días)
+      - name: Generar segunda vista temporal desde KKO no validado
+        run: |
+          python scripts/generate_kko_preview.py \
+            --kko knowledge/modelos/KKO-IA-LLM-001.md \
+            --output dist/preview/kosmowiki/modelos-lenguaje.md \
+            --allow-draft
+      - name: Comprobar segundo borrador y bloqueo de publicación
+        run: |
+          test -s dist/preview/kosmowiki/modelos-lenguaje.md
+          grep -q '^status: draft$' dist/preview/kosmowiki/modelos-lenguaje.md
+          grep -q '^publication_approved: false$' dist/preview/kosmowiki/modelos-lenguaje.md
+          grep -q '^source_kko: "KKO-IA-LLM-001"$' dist/preview/kosmowiki/modelos-lenguaje.md
+      - name: Guardar borradores para revisión (7 días)
         uses: actions/upload-artifact@v4
         with:
-          name: kko-agentes-kosmowiki-borrador
-          path: dist/preview/kosmowiki/agentes-ia.md
+          name: kko-kosmowiki-borradores
+          path: dist/preview/kosmowiki/*.md
           retention-days: 7
           if-no-files-found: error
 
-# Solo genera un artefacto de revisión. No hace commit, merge ni despliegue web.
+# Solo genera artefactos de revisión. No hace commit, merge ni despliegue web.
