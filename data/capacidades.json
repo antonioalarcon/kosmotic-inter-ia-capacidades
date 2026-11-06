@@ -1,0 +1,21 @@
+{
+  "referencia": "KOS-COM-IA-CAPACIDADES-2026-10-06",
+  "version": "v0.1",
+  "estado": "BASE PÚBLICA · EN EVOLUCIÓN",
+  "fecha": "2026-10-06",
+  "capacidades": [
+    {"id": 1, "slug": "automatizar-tareas", "titulo": "Automatizar tareas", "resumen": "Reducir trabajo repetitivo, conectar herramientas y ahorrar tiempo operativo.", "principio": "La automatización no es el objetivo; es infraestructura para liberar capacidad humana donde aporta más valor."},
+    {"id": 2, "slug": "crear-agentes-ia", "titulo": "Crear agentes IA", "resumen": "Diseñar asistentes especializados para tareas concretas, con funciones definidas, reglas, límites y supervisión.", "principio": "Un agente no debe recibir más autonomía de la necesaria para cumplir su función."},
+    {"id": 3, "slug": "analizar-datos", "titulo": "Analizar datos", "resumen": "Ordenar información, detectar patrones, establecer relaciones, extraer conclusiones y apoyar decisiones.", "principio": "Los datos adquieren valor cuando pueden convertirse en conocimiento útil y acción verificable."},
+    {"id": 4, "slug": "generar-contenido", "titulo": "Generar contenido", "resumen": "Crear textos, imágenes, documentos, guiones, publicaciones, propuestas, materiales comerciales, educativos y audiovisuales.", "principio": "La capacidad relevante es producir lo adecuado, para la persona adecuada, en el momento adecuado y con propósito definido."},
+    {"id": 5, "slug": "liderar-proyectos", "titulo": "Liderar proyectos", "resumen": "Planificar, coordinar, documentar, ejecutar y medir proyectos apoyados por inteligencia artificial.", "principio": "IDEA → ESTRUCTURA → ACCIÓN → EVIDENCIA → APRENDIZAJE."},
+    {"id": 6, "slug": "coordinar-varias-ias", "titulo": "Coordinar varias IAs", "resumen": "Combinar diferentes modelos, herramientas, automatizaciones y agentes según su función.", "principio": "El valor reside en coordinar capacidades complementarias, no en acumular herramientas."},
+    {"id": 7, "slug": "disenar-sistemas-inter-ia", "titulo": "Diseñar sistemas Inter-IA", "resumen": "Construir arquitecturas donde distintas IAs, herramientas y fuentes colaboren bajo reglas explícitas.", "principio": "FUNCIÓN → CONTEXTO → PERMISOS → LÍMITES → EVIDENCIA → ESCALADO HUMANO."},
+    {"id": 8, "slug": "construir-memoria-operativa", "titulo": "Construir memoria operativa", "resumen": "Transformar conversaciones, correos, documentos, clientes, tareas, proyectos, decisiones y resultados en conocimiento reutilizable.", "principio": "LOCALIZARSE → RELACIONARSE → ACTUALIZARSE → VERIFICARSE → REUTILIZARSE → PORTARSE."},
+    {"id": 9, "slug": "auditar-decisiones-con-ia", "titulo": "Auditar decisiones con IA", "resumen": "Verificar fuentes, razonamientos, resultados, acciones y cambios realizados por sistemas inteligentes.", "principio": "Distinguir entre HECHO · INFERENCIA · HIPÓTESIS · ESPECULACIÓN."},
+    {"id": 10, "slug": "conectar-ia-mundo-real", "titulo": "Conectar la IA con el mundo real", "resumen": "Integrar IA con correo, calendario, documentos, bases de datos, CRM, almacenamiento, APIs y aplicaciones autorizadas.", "principio": "Pasar de IA que responde a IA que colabora con sistemas reales dentro de permisos definidos."},
+    {"id": 11, "slug": "experimentar-y-validar", "titulo": "Experimentar y validar", "resumen": "Convertir necesidades reales en experimentos medibles.", "principio": "OBSERVAR → EXPERIMENTAR → VALIDAR → ASIGNAR FUNCIÓN → INTEGRAR."},
+    {"id": 12, "slug": "resiliencia-y-continuidad", "titulo": "Diseñar resiliencia y continuidad", "resumen": "Evitar que herramienta, proveedor, cuenta, modelo o plataforma se conviertan en punto único de fallo.", "principio": "N+1 · N+N: consultable, actualizable, sincronizable, portable y recuperable."},
+    {"id": 13, "slug": "soberania-humana", "titulo": "Mantener soberanía humana", "resumen": "La IA amplía capacidad; no sustituye automáticamente criterio, responsabilidad ni propósito.", "principio": "AUTORIZAR · CORREGIR · REVOCAR · DETENER · SUSTITUIR · DECIDIR."}
+  ]
+}
