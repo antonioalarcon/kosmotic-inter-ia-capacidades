@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07162D">
+<meta name="description" content="KosmoTIC City: una ciudad de ideas, conocimiento y personas.">
+<title>KosmoTIC City · Una ciudad de ideas, conocimiento y personas</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#espacios">Saltar al listado de espacios</a>
+<header class="top">
+<a class="brand" href="#inicio" aria-label="KosmoTIC City, inicio">KosmoTIC <span>City</span></a>
+<div class="motto">El futuro se construye juntos. <strong>Personas primero.</strong></div>
+</header>
+<nav class="crumbs" aria-label="Ruta de navegación">
+<a href="../index.html">← Volver a la portada</a>
+<a href="./portal/">Portal de contenidos</a>
+<a href="./portal/#kosmotic">Sobre KosmoTIC</a>
+</nav>
+<main id="inicio">
+<section class="intro" aria-labelledby="city-title">
+<h1 id="city-title">Una ciudad de ideas, conocimiento y personas.</h1>
+<p>Explora los espacios de KosmoTIC City. La ciudad está en evolución.</p>
+</section>
+<section class="scene" id="mapa-visual" aria-label="Mapa visual de KosmoTIC City">
+<img src="assets/ciudad-v1-2.jpeg" alt="Vista aérea ilustrada de KosmoTIC City al anochecer: doce edificios rotulados (Biblioteca, Negocios y Red, Círculo de Confianza, Comunidad, Inter-IA, Formación, Comercio, Innovación, Cultura, Sostenibilidad, Datos y Observatorio) alrededor de una plaza central, con el arco de entrada al frente y una barra inferior de iconos. Usa los accesos superpuestos o el listado inferior para explorar." width="1672" height="941" onerror="document.getElementById('mapa-visual').hidden=true;document.getElementById('mapa-pendiente').hidden=false">
+<div class="hotspots" id="hotspots"></div>
+<div class="iconmenu" id="iconmenu" role="navigation" aria-label="Menú de la ciudad"></div>
+</section>
+<div class="scene-pending" id="mapa-pendiente" hidden>
+<strong>Mapa visual en preparación.</strong><br>
+La imagen definitiva de la ciudad se incorporará cuando quede acreditada su procedencia. Mientras tanto, el listado de espacios inferior sigue plenamente operativo.
+</div>
+<section class="spaces" id="espacios" aria-labelledby="spaces-title">
+<div class="section-heading"><h2 id="spaces-title">Explora la ciudad</h2>
+<p>Los edificios y este listado conducen al mismo contenido. Los espacios se muestran según su estado real de validación.</p></div>
+<nav class="space-grid" id="space-grid" aria-label="Áreas de KosmoTIC City">
+<a class="space-link" href="./portal/#biblioteca-city"><strong>Biblioteca KosmoTIC</strong><small>Conocer el espacio · En obras · primeras referencias disponibles</small></a>
+<a class="space-link" href="./portal/#negocios-city"><strong>Centro de Negocios y Red</strong><small>Conocer el espacio · En obras</small></a>
+<a class="space-link" href="./portal/#confianza-city"><strong>Círculo de Confianza</strong><small>Conocer el espacio · En obras</small></a>
+<a class="space-link" href="./portal/#comunidad-city"><strong>Comunidad KosmoTIC</strong><small>Conocer el espacio · En obras</small></a>
+<a class="space-link" href="./portal/#inter-ia"><strong>Inter-IA · Laboratorio Cognitivo</strong><small>Conocer el espacio · Presentación piloto disponible</small></a>
+<a class="space-link" href="./portal/#academia-city"><strong>Formación y Talento</strong><small>Conocer el espacio · En obras · práctica L10 disponible</small></a>
+<a class="space-link" href="./portal/#comercio-city"><strong>Comercio Local</strong><small>Conocer el espacio · En preparación</small></a>
+<a class="space-link" href="./portal/#proyectos-city"><strong>Innovación y Proyectos</strong><small>Conocer el espacio · En obras</small></a>
+<a class="space-link" href="./portal/#cultura-city"><strong>Cultura y Patrimonio</strong><small>Conocer el espacio · En preparación</small></a>
+<a class="space-link" href="./portal/#sostenibilidad-city"><strong>Sostenibilidad y Entorno</strong><small>Conocer el espacio · En preparación</small></a>
+<a class="space-link" href="./portal/#datos-city"><strong>Datos y Resultados</strong><small>Conocer el espacio · En preparación</small></a>
+<a class="space-link" href="./portal/#observatorio-city"><strong>Observatorio SACT</strong><small>Conocer el espacio · En preparación</small></a>
+</nav>
+</section>
+<section class="detail" id="detalle" tabindex="-1" aria-labelledby="detail-title" hidden>
+<div class="detail-head"><span class="eyebrow">Espacio de KosmoTIC City</span><button id="close-detail" type="button">← Volver a la City</button></div>
+<h2 id="detail-title"></h2>
+<p id="detail-description"></p>
+<p class="status" id="detail-status"><span aria-hidden="true">●</span> En preparación · Información pendiente de validar</p>
+<a href="#" class="content-link" id="content-link" hidden>Ver contenido publicado en el portal</a>
+<a href="#espacios" class="return">Ver todos los espacios</a>
+</section>
+</main>
+<footer>
+<span>KosmoTIC City.</span>
+<span>Una ciudad de ideas, conocimiento y personas.</span>
+<span>By Antonio Alarcón Izquierdo.</span>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>
