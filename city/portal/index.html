@@ -37,8 +37,7 @@
     .map-links a:hover{border-color:var(--cyan)}.map-links small{display:block;color:var(--soft);font-size:.8rem;font-weight:400}
     .subarea .grid{grid-template-columns:1fr}
     .subarea{border-left:3px solid var(--cyan);padding-left:15px;margin-top:22px}.estados{font-size:.92rem;color:var(--soft)}.estados strong{color:var(--ink)}.subarea ul{padding-left:20px}.subarea li{margin:8px 0}
-    .mast{position:sticky;top:0;z-index:50}[id]{scroll-margin-top:150px}
-    @media(max-width:800px){[id]{scroll-margin-top:210px}}
+    .mast{position:sticky;top:0;z-index:50}[id]{scroll-margin-top:calc(var(--mast-height, 140px) + 12px)}
     @media(max-width:800px){.map-links{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.map-links{grid-template-columns:1fr}}
     .inventory-list{columns:3;column-gap:25px;padding-left:0;list-style:none}.ref-num{display:inline-block;min-width:2.2em;color:var(--soft);font-variant-numeric:tabular-nums}.inventory-list li{break-inside:avoid;margin-bottom:7px}
     @media(max-width:800px){.inventory-list{columns:2}}@media(max-width:520px){.inventory-list{columns:1}}
@@ -171,7 +170,7 @@
       <p><strong>Ciclo práctico:</strong> objetivo → acción → observación → evaluación → resultado.</p>
       <p><strong>Ejercicio:</strong> imagina un asistente que revisa ventas y prepara un informe. ¿Qué herramientas necesitaría, con qué permisos y qué acciones deberían requerir aprobación humana? ¿Podría enviarlo automáticamente a tus clientes?</p>
       <details><summary>Ver una respuesta razonada</summary><p>Podría necesitar acceso de solo lectura a ventas y una herramienta de elaboración de informes. Consultar datos, redactar el borrador y enviarlo son acciones distintas. El envío no se autoriza por defecto: requiere permiso específico y supervisión adecuada al riesgo.</p></details>
-      <p style="margin-top:22px">Consultar la lección de referencia completa ↗</p>
+      <p style="margin-top:22px">Documento de referencia completo no disponible públicamente</p>
       
     </article>
   </div></section>
@@ -277,7 +276,7 @@
       <article class="card"><h3>Soberanía digital</h3><p>La autoridad y los datos sensibles permanecen bajo control humano; la tecnología se elige por utilidad, no por dependencia.</p><p class="micro">Disponible como principio en esta página</p></article>
       <article class="card"><h3>Gobernanza</h3><p>Autoridad humana, permisos por acción, trazabilidad y revisión antes de publicar.</p><p class="micro">Disponible como principio en esta página</p></article>
       <article class="card"><h3>Observatorio</h3><p>Seguimiento crítico de avances, fuentes y riesgos del ecosistema.</p><p class="micro">En preparación · definición pública pendiente</p></article>
-      <article class="card"><h3>Resiliencia</h3><p>Continuidad N+1/N+N, copias comprobables y recuperación verificable.</p><p class="micro">🚧 En obras · pruebas de restauración públicas</p></article>
+      <article class="card"><h3>Resiliencia</h3><p>Continuidad N+1/N+N, copias comprobables y recuperación verificable.</p><p class="micro">🚧 En obras · pruebas de restauración previstas</p></article>
       <article class="card"><h3>Memoria</h3><p>Versiones, procedencia y contexto conservados para no depender de la improvisación.</p><p class="micro">🚧 En obras</p></article>
       <article class="card"><h3>Legado</h3><p>Documentación fundacional y decisiones pensadas para permanecer.</p><p class="micro">Disponible · <a href="#genesis">La Génesis</a></p></article>
     </div>
