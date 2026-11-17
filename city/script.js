@@ -20,7 +20,7 @@ const spaces=[
 {id:'cultura',status:'En preparación',content:'cultura-city',x:19.5,y:61.5,w:16.0,h:22.0,name:'Cultura y Patrimonio',description:'Espacio previsto para contenidos culturales y patrimoniales.'},
 {id:'sostenibilidad',status:'En preparación',content:'sostenibilidad-city',x:36.0,y:66.0,w:16.0,h:18.0,name:'Sostenibilidad y Entorno',description:'Espacio previsto para iniciativas relacionadas con el entorno y la sostenibilidad.'},
 {id:'datos',status:'En preparación',content:'datos-city',x:69.0,y:64.0,w:16.0,h:21.0,name:'Datos y Resultados',description:'Espacio previsto para información y resultados verificables.'},
-{id:'observatorio',status:'En preparación',content:'observatorio-city',x:9.8,y:37.5,w:10.5,h:15.0,name:'Observatorio SACT',description:'Espacio previsto para observación y seguimiento de cuestiones tecnológicas relevantes.'}
+{id:'observatorio',status:'En preparación',content:'observatorio-city',x:9.8,y:37.5,w:10.5,h:15.0,name:'Observatorio Civilizatorio',description:'Espacio previsto para observación y seguimiento de cuestiones tecnológicas relevantes.'}
 ];
 const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
 const detail=document.getElementById('detalle'),title=document.getElementById('detail-title'),description=document.getElementById('detail-description');
