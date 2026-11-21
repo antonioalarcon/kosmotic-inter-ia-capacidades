@@ -209,3 +209,19 @@ a { color: var(--accent); }
   .actions { flex-direction: column; align-items: stretch; }
   .cta { text-align: center; }
 }
+
+/* KOS-CITY-REF-20261121: coherencia visual y accesibilidad */
+:root { --accent:#16D9F0; --accent-2:#45A79E; --bg:#07162D; }
+.skip{position:absolute;left:-9999px;top:0;background:#F4F7FB;color:#07162D;padding:12px;z-index:10}
+.skip:focus{left:12px;top:12px}
+html{scroll-behavior:smooth}
+.hero{padding-top:clamp(36px,7vw,80px)}
+.hero h1{line-height:1.08}
+.cta-primary{background:#143D8D;border-color:#16D9F0}
+.philosophy{border:1px solid rgba(22,217,240,.4);border-radius:18px;padding:28px;margin-top:4px;background:rgba(20,61,141,.2)}
+.philosophy p{max-width:70ch}
+.philosophy .signature{font-weight:750;margin-bottom:0}
+.signature span{font-weight:450;color:var(--muted)}
+.footer-links a{color:#16D9F0}
+@media(max-width:560px){.hero h1{font-size:clamp(2rem,9vw,3rem)}.philosophy{padding:20px}.cta{min-height:48px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
