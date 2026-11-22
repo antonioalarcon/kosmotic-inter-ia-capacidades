@@ -225,3 +225,8 @@ html{scroll-behavior:smooth}
 .footer-links a{color:#16D9F0}
 @media(max-width:560px){.hero h1{font-size:clamp(2rem,9vw,3rem)}.philosophy{padding:20px}.cta{min-height:48px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Auditoría TECLA 04: contraste, foco y adaptación */
+:focus-visible{outline:3px solid #FFAD62;outline-offset:3px}
+.model p,.principle p,.architecture p{overflow-wrap:anywhere}
+@media(max-width:560px){.hero,.section,.footer{width:min(100% - 28px,1120px)}.actions{gap:10px}.cta{display:flex;align-items:center;justify-content:center;min-height:48px}.grid{grid-template-columns:minmax(0,1fr)}}
