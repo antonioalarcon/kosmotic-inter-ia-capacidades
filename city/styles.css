@@ -72,3 +72,8 @@ footer{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--lin
 .welcome-actions a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
 @media(max-width:650px){.kosmo-welcome{grid-template-columns:1fr;justify-items:start}.kosmo-avatar{width:120px;max-width:120px}.kosmo-copy{min-width:0;width:100%}.welcome-actions{width:100%}.welcome-actions a{min-height:48px}}
 @media(max-width:600px){.hotspots,.iconmenu{display:none}.scene{margin:0 10px}.spaces{padding-top:24px}.space-grid{grid-template-columns:1fr}.space-link{min-height:48px;padding:14px;font-size:1rem}.intro h1{font-size:clamp(1.4rem,6vw,2rem)}}
+
+/* Conciliación PR #5 → PR #4: foco y tactilidad del CTA único de Kosmo. */
+.welcome-actions a:first-child{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;background:var(--cyan);color:var(--blue-deep);border-color:var(--cyan)}
+.welcome-actions a:first-child:hover{background:var(--light);color:var(--blue-deep)}
+@media(max-width:650px){.welcome-actions a:first-child{width:100%}}
