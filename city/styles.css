@@ -65,3 +65,10 @@ footer{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--lin
 
 .kosmo-avatar{overflow:hidden;aspect-ratio:344/512;max-width:140px}
 .kosmo-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Auditoría TECLA 04: legibilidad y alternativa táctil móvil */
+.crumbs{flex-wrap:wrap;row-gap:8px}
+.kosmo-avatar img{object-position:center top}
+.welcome-actions a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+@media(max-width:650px){.kosmo-welcome{grid-template-columns:1fr;justify-items:start}.kosmo-avatar{width:120px;max-width:120px}.kosmo-copy{min-width:0;width:100%}.welcome-actions{width:100%}.welcome-actions a{min-height:48px}}
+@media(max-width:600px){.hotspots,.iconmenu{display:none}.scene{margin:0 10px}.spaces{padding-top:24px}.space-grid{grid-template-columns:1fr}.space-link{min-height:48px;padding:14px;font-size:1rem}.intro h1{font-size:clamp(1.4rem,6vw,2rem)}}
