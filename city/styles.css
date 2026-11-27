@@ -50,3 +50,30 @@ footer{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--lin
 @media(max-width:850px){.top{align-items:flex-start}.motto{max-width:45%}.spaces{padding-top:18px}}
 @media(max-width:480px){.top{padding:14px 14px 8px;flex-wrap:wrap;row-gap:6px}.top .motto{max-width:100%;text-align:left}.top .motto strong{margin-left:0}.brand{font-size:1.45rem}.motto{font-size:.72rem}.intro{padding:8px 15px}.space-grid{grid-template-columns:1fr 1fr;gap:9px}.space-link{padding:12px;min-height:100px;font-size:.85rem}.detail{margin:0 12px 35px;padding:20px 16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* KOS-CITY-REF-20261121: anfitrión Kosmo, sin alterar el mapa aprobado */
+.kosmo-welcome{max-width:1250px;margin:28px auto 0;padding:24px;display:grid;grid-template-columns:minmax(95px,140px) 1fr;align-items:center;gap:24px;border:1px solid var(--line);border-radius:20px;background:rgba(20,61,141,.35)}
+.kosmo-avatar{width:100%;aspect-ratio:1;border-radius:16px;border:2px solid var(--cyan);background:linear-gradient(145deg,#143D8D,#07162D);display:grid;place-items:center}
+.kosmo-avatar span{font-size:3.2rem;font-weight:800;color:var(--cyan)}
+.kosmo-copy h2{margin:0;font-size:clamp(1.6rem,3vw,2.4rem)}
+.kosmo-copy p{margin:6px 0 12px}
+.welcome-actions{display:flex;gap:10px;flex-wrap:wrap}
+.welcome-actions a{display:inline-block;min-height:44px;padding:10px 16px;background:#143D8D;border:1px solid var(--cyan);border-radius:10px;color:var(--light);font-weight:700;text-decoration:none}
+.welcome-actions a:hover{background:#2050a2}
+.kosmo-disclosure{font-size:.8rem;color:var(--muted)}
+@media(max-width:650px){.kosmo-welcome{margin:16px 12px 0;padding:16px;grid-template-columns:82px 1fr;gap:12px}.welcome-actions a{width:100%;text-align:center}.kosmo-copy h2{font-size:1.45rem}}
+
+.kosmo-avatar{overflow:hidden;aspect-ratio:344/512;max-width:140px}
+.kosmo-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Auditoría TECLA 04: legibilidad y alternativa táctil móvil */
+.crumbs{flex-wrap:wrap;row-gap:8px}
+.kosmo-avatar img{object-position:center top}
+.welcome-actions a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+@media(max-width:650px){.kosmo-welcome{grid-template-columns:1fr;justify-items:start}.kosmo-avatar{width:120px;max-width:120px}.kosmo-copy{min-width:0;width:100%}.welcome-actions{width:100%}.welcome-actions a{min-height:48px}}
+@media(max-width:600px){.hotspots,.iconmenu{display:none}.scene{margin:0 10px}.spaces{padding-top:24px}.space-grid{grid-template-columns:1fr}.space-link{min-height:48px;padding:14px;font-size:1rem}.intro h1{font-size:clamp(1.4rem,6vw,2rem)}}
+
+/* Conciliación PR #5 → PR #4: foco y tactilidad del CTA único de Kosmo. */
+.welcome-actions a:first-child{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;background:var(--cyan);color:var(--blue-deep);border-color:var(--cyan)}
+.welcome-actions a:first-child:hover{background:var(--light);color:var(--blue-deep)}
+@media(max-width:650px){.welcome-actions a:first-child{width:100%}}
